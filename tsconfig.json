@@ -44,6 +44,18 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "emitDeclarationOnly": true,
+    "allowImportingTsExtensions": true,
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "build",
+    "out",
+    "lib",
+    "temp",
+    "vitest.config.ts"
+  ],
 }
