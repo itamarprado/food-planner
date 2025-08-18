@@ -21,4 +21,8 @@ router.put("/ingredients/:name", (req, res) =>
   ingredientController.update(req, res)
 );
 
+router.delete("/ingredients/:name", (req, res) =>
+  ingredientController.delete(req, res)
+);
+
 export { router };

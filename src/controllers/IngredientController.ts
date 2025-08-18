@@ -6,7 +6,7 @@ import { CreateIngredientUseCase } from "../usecases/ingredient/create/CreateIng
 import { FindAllIngredients } from "../usecases/ingredient/findAll/FindAllIngredientsUseCase.ts";
 import { FindByNameIngredient } from "../usecases/ingredient/findByName/FindByNameIngredientUseCase.ts";
 import { UpdateIngredientByName } from "../usecases/ingredient/update/UpdateIngredientByNameUseCase.ts";
-
+import { DeleteIngredientUseCase } from "../usecases/ingredient/delete/DeleteIngredientUseCase.ts";
 
 export class IngredientController {
   constructor(private ingredientRepository: IIngredientRepository) {}
@@ -86,6 +86,25 @@ export class IngredientController {
         requestDTO
       );
       return res.status(200).json(updatedIngredient);
+    } catch (error: any) {
+      return res.status(400).json({ message: error.message });
+    }
+  }
+
+  async delete(req: Request, res: Response): Promise<Response> {
+    try {
+      const { name } = req.params;
+
+      if (name === undefined) {
+        return res.status(400).json({ message: "Name is required" });
+      }
+
+      const deleteIngredientUseCase = new DeleteIngredientUseCase(
+        this.ingredientRepository
+      );
+
+      await deleteIngredientUseCase.execute(name);
+      return res.status(204).send();
     } catch (error: any) {
       return res.status(400).json({ message: error.message });
     }

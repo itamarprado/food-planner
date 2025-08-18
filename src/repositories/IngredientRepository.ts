@@ -9,4 +9,5 @@ export interface IIngredientRepository {
     name: string,
     data: IUpdateIngredientDataDTO
   ): Promise<Ingredient>;
+  deleteByName(name: string): Promise<void>;
 }

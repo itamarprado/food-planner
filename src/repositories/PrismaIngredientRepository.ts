@@ -39,5 +39,7 @@ export class PrismaIngredientRepository implements IIngredientRepository {
     );
   }
 
-
+  async deleteByName(name: string): Promise<void> {
+    await prisma.ingredient.delete({ where: { name } });
+  }
 }
