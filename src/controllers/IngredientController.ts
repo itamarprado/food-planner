@@ -1,8 +1,12 @@
 import type { Request, Response } from "express";
-import { CreateIngredientUseCase } from "../usecases/ingredient/create/CreateIngredientUseCase.ts";
 import type { IIngredientRepository } from "../repositories/IngredientRepository.ts";
+
+// Use Cases
+import { CreateIngredientUseCase } from "../usecases/ingredient/create/CreateIngredientUseCase.ts";
 import { FindAllIngredients } from "../usecases/ingredient/findAll/FindAllIngredientsUseCase.ts";
 import { FindByNameIngredient } from "../usecases/ingredient/findByName/FindByNameIngredientUseCase.ts";
+import { UpdateIngredientByName } from "../usecases/ingredient/update/UpdateIngredientByNameUseCase.ts";
+
 
 export class IngredientController {
   constructor(private ingredientRepository: IIngredientRepository) {}
@@ -57,8 +61,33 @@ export class IngredientController {
         }
       }
     } catch (error) {
-      console.error(error);
       return res.status(500).json({ message: "Erro ao buscar ingrediente" });
+    }
+  }
+
+  async update(req: Request, res: Response): Promise<Response> {
+    try {
+      const { name } = req.params;
+      const { quantity, unit } = req.body;
+
+      if (name === undefined)
+        return res.status(400).json({ message: "Name is required" });
+
+      if (unit === "")
+        return res.status(400).json({ message: "Unit cannot be empty." });
+
+      const updateIngredientUseCase = new UpdateIngredientByName(
+        this.ingredientRepository
+      );
+
+      const requestDTO = { name, quantity, unit };
+
+      const updatedIngredient = await updateIngredientUseCase.execute(
+        requestDTO
+      );
+      return res.status(200).json(updatedIngredient);
+    } catch (error: any) {
+      return res.status(400).json({ message: error.message });
     }
   }
 }

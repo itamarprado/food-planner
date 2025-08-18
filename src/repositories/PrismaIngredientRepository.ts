@@ -1,6 +1,7 @@
 import { PrismaClient } from "../generated/prisma/index.js";
 import type { IIngredientRepository } from "./IngredientRepository.ts";
 import { Ingredient } from "../entities/ingredient/ingredient.ts";
+import type { IUpdateIngredientDataDTO } from "../usecases/ingredient/update/UpdateIngredientByNameDTO.ts";
 
 const prisma = new PrismaClient();
 
@@ -25,4 +26,18 @@ export class PrismaIngredientRepository implements IIngredientRepository {
       },
     });
   }
+
+  async updateByName(
+    name: string,
+    data: IUpdateIngredientDataDTO
+  ): Promise<Ingredient> {
+    return Ingredient.with(
+      await prisma.ingredient.update({
+        where: { name },
+        data,
+      })
+    );
+  }
+
+
 }

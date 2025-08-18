@@ -17,4 +17,8 @@ router.get("/ingredients/:name", (req, res) =>
   ingredientController.getByName(req, res)
 );
 
+router.put("/ingredients/:name", (req, res) =>
+  ingredientController.update(req, res)
+);
+
 export { router };
