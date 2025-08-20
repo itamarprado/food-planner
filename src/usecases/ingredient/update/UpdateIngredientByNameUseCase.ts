@@ -1,5 +1,4 @@
-import { Ingredient } from "../../../entities/ingredient/ingredient.ts";
-import type { IIngredientRepository } from "../../../repositories/IngredientRepository.ts";
+import type { IIngredientRepository } from "../../../repositories/IngredientRepository.js";
 import type {
   IUpdateIngredientRequestDTO,
   IUpdateIngredientResponseDTO,

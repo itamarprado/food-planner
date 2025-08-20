@@ -1,4 +1,4 @@
-import { Ingredient } from "../../../entities/ingredient/ingredient.ts";
+import { Ingredient } from "../../../entities/ingredient/ingredient.js";
 
 export interface ICreateIngredientRequestDTO {
   name: string;

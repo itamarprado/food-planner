@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { PrismaIngredientRepository } from "./repositories/PrismaIngredientRepository.ts";
-import { IngredientController } from "./controllers/IngredientController.ts";
+import { PrismaIngredientRepository } from "./repositories/PrismaIngredientRepository.js";
+import { IngredientController } from "./controllers/IngredientController.js";
 
 const router = Router();
 

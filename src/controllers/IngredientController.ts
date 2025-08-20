@@ -1,12 +1,12 @@
 import type { Request, Response } from "express";
-import type { IIngredientRepository } from "../repositories/IngredientRepository.ts";
+import type { IIngredientRepository } from "../repositories/IngredientRepository.js";
 
 // Use Cases
-import { CreateIngredientUseCase } from "../usecases/ingredient/create/CreateIngredientUseCase.ts";
-import { FindAllIngredients } from "../usecases/ingredient/findAll/FindAllIngredientsUseCase.ts";
-import { FindByNameIngredient } from "../usecases/ingredient/findByName/FindByNameIngredientUseCase.ts";
-import { UpdateIngredientByName } from "../usecases/ingredient/update/UpdateIngredientByNameUseCase.ts";
-import { DeleteIngredientUseCase } from "../usecases/ingredient/delete/DeleteIngredientUseCase.ts";
+import { CreateIngredientUseCase } from './../usecases/ingredient/create/CreateIngredientUseCase.js';
+import { FindAllIngredients } from "../usecases/ingredient/findAll/FindAllIngredientsUseCase.js";
+import { FindByNameIngredient } from "../usecases/ingredient/findByName/FindByNameIngredientUseCase.js";
+import { UpdateIngredientByName } from "../usecases/ingredient/update/UpdateIngredientByNameUseCase.js";
+import { DeleteIngredientUseCase } from "../usecases/ingredient/delete/DeleteIngredientUseCase.js";
 
 export class IngredientController {
   constructor(private ingredientRepository: IIngredientRepository) {}

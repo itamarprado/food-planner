@@ -1,7 +1,7 @@
 import { PrismaClient } from "../generated/prisma/index.js";
-import type { IIngredientRepository } from "./IngredientRepository.ts";
-import { Ingredient } from "../entities/ingredient/ingredient.ts";
-import type { IUpdateIngredientDataDTO } from "../usecases/ingredient/update/UpdateIngredientByNameDTO.ts";
+import type { IIngredientRepository } from "./IngredientRepository.js";
+import { Ingredient } from "../entities/ingredient/ingredient.js";
+import type { IUpdateIngredientDataDTO } from "../usecases/ingredient/update/UpdateIngredientByNameDTO.js";
 
 const prisma = new PrismaClient();
 

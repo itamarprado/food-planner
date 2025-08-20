@@ -14,7 +14,7 @@
     "moduleResolution": "node",
     //"types": [],
     // For nodejs:
-    // "lib": ["esnext"],
+    "lib": ["esnext"],
     "types": ["node"],
     // and npm install -D @types/node
 
@@ -45,8 +45,8 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "emitDeclarationOnly": true,
-    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": false,
+    "allowImportingTsExtensions": false,
   },
   "exclude": [
     "node_modules",

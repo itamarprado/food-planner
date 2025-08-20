@@ -1,4 +1,4 @@
-import type { IIngredientRepository } from "./../../../repositories/IngredientRepository";
+import type { IIngredientRepository } from "./../../../repositories/IngredientRepository.js";
 import type {
   IFindByNameIngredientRequestDTO,
   IFindByNameIngredientResponseDTO,

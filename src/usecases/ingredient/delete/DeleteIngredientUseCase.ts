@@ -1,4 +1,4 @@
-import type { IIngredientRepository } from "../../../repositories/IngredientRepository";
+import type { IIngredientRepository } from "../../../repositories/IngredientRepository.js";
 
 export class DeleteIngredientUseCase {
   constructor(private ingredientRepository: IIngredientRepository) {}

@@ -1,4 +1,4 @@
-import type { Ingredient } from "../../../entities/ingredient/ingredient.ts";
+import type { Ingredient } from "../../../entities/ingredient/ingredient.js";
 
 export interface IFindByNameIngredientRequestDTO {
   name: string;

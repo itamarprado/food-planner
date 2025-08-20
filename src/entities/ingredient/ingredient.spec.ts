@@ -1,5 +1,5 @@
 import { describe, expect, test, it } from "vitest";
-import { Ingredient } from "./ingredient.ts";
+import { Ingredient } from "./ingredient.js";
 
 describe("Ingredient Entity", () => {
   it("should create an ingredient", () => {

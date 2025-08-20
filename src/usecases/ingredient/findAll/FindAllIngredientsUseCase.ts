@@ -1,5 +1,5 @@
-import type { IIngredientRepository } from "../../../repositories/IngredientRepository.ts";
-import type { IFindAllIngredientsResponseDTO } from "./FindAllIngredientsDTO.ts";
+import type { IIngredientRepository } from "../../../repositories/IngredientRepository.js";
+import type { IFindAllIngredientsResponseDTO } from "./FindAllIngredientsDTO.js";
 
 export class FindAllIngredients {
   constructor(private IIngredientRepository: IIngredientRepository) {}
