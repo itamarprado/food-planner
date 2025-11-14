@@ -81,12 +81,12 @@ export class Ingredient {
     this.props.updatedAt = new Date();
   }
 
-  public updateUnit(newunit: string) {
-    if (newunit === "") {
+  public updateUnit(newUnit: string) {
+    if (newUnit === "") {
       throw new Error("Unit cannot be empty");
     }
 
-    this.props.unit = newunit;
+    this.props.unit = newUnit;
     this.props.updatedAt = new Date();
   }
 
