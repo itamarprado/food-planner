@@ -2,7 +2,7 @@ import type { IIngredientRepository } from "./../../../repositories/IngredientRe
 import type {
   IFindByNameIngredientRequestDTO,
   IFindByNameIngredientResponseDTO,
-} from "./FindByNameIngredientDTO";
+} from "./FindByNameIngredientDTO.js";
 
 export class FindByNameIngredient {
   constructor(private IIngredientRepository: IIngredientRepository) {}

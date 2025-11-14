@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
-import { CreateIngredientUseCase } from "./CreateIngredientUseCase";
-import { Ingredient } from "../../../entities/ingredient/ingredient";
+import { CreateIngredientUseCase } from "./CreateIngredientUseCase.js";
+import { Ingredient } from "../../../entities/ingredient/ingredient.js";
 
 describe("CreateIngredientUseCase", () => {
   const mockRepo = {
