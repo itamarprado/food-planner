@@ -15,11 +15,44 @@ datasource db {
 }
 
 model Ingredient {
-  name      String   @id @unique
+  id        String   @id @default(cuid())
+  name      String   @unique
   quantity  Float
   unit      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  // relation back to join table
+  recipes IngredientsInRecipes[]
+
   @@map("ingredients")
+}
+
+model Recipe {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  description   String
+  howToPrepare  String
+  timeToPrepare Int
+  portions      Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  ingredients IngredientsInRecipes[]
+
+  @@map("recipes")
+}
+
+model IngredientsInRecipes {
+  id             String @id @default(cuid())
+  recipeId       String
+  ingredientName String
+  amount         Float
+  unit           String
+
+  recipe     Recipe     @relation(fields: [recipeId], references: [id])
+  ingredient Ingredient @relation(fields: [ingredientName], references: [name])
+
+  @@unique([recipeId, ingredientName])
+  @@map("ingredients_in_recipes")
 }
