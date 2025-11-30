@@ -2,7 +2,7 @@ import type { Request, Response } from "express";
 import type { IIngredientRepository } from "../repositories/IngredientRepository.js";
 
 // Use Cases
-import { CreateIngredientUseCase } from './../usecases/ingredient/create/CreateIngredientUseCase.js';
+import { CreateIngredientUseCase } from "./../usecases/ingredient/create/CreateIngredientUseCase.js";
 import { FindAllIngredients } from "../usecases/ingredient/findAll/FindAllIngredientsUseCase.js";
 import { FindByNameIngredient } from "../usecases/ingredient/findByName/FindByNameIngredientUseCase.js";
 import { UpdateIngredientByName } from "../usecases/ingredient/update/UpdateIngredientByNameUseCase.js";
